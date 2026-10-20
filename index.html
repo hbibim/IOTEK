@@ -1,16 +1,240 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="IOTEK operations dashboard with a premium monitoring interface"
-    />
     <title>IOTEK Control Hub</title>
+    <meta name="description" content="IOTEK premium monitoring dashboard" />
+    <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+    <div class="dashboard-shell">
+      <aside class="sidebar">
+        <div>
+          <div class="brand">
+            <div class="brand-mark">I</div>
+            <div>
+              <strong>IOTEK</strong>
+              <small>Control Hub</small>
+            </div>
+          </div>
+
+          <nav class="nav" aria-label="Sidebar navigation">
+            <button class="nav-item active" type="button"><span>🏠</span> Overview</button>
+            <button class="nav-item" type="button"><span>⚙️</span> Operations</button>
+            <button class="nav-item" type="button"><span>🛰️</span> Devices</button>
+            <button class="nav-item" type="button"><span>🛡️</span> Security</button>
+            <button class="nav-item" type="button"><span>📊</span> Analytics</button>
+            <button class="nav-item" type="button"><span>🔧</span> Settings</button>
+          </nav>
+        </div>
+
+        <div class="sidebar-card">
+          <div class="status-dot"></div>
+          <div>
+            <strong>System Healthy</strong>
+            <small>92.3% performance</small>
+          </div>
+        </div>
+      </aside>
+
+      <main class="main-panel">
+        <header class="topbar">
+          <label class="search-box" aria-label="Search">
+            <span>🔎</span>
+            <input type="text" placeholder="Search devices, alerts, zones..." />
+          </label>
+
+          <div class="topbar-actions">
+            <button class="icon-btn" type="button" aria-label="Notifications">🔔</button>
+
+            <div class="profile-box">
+              <div class="avatar">HB</div>
+              <div>
+                <strong>Hbibim</strong>
+                <small>Admin</small>
+              </div>
+              <span>▾</span>
+            </div>
+          </div>
+        </header>
+
+        <section class="stats-grid">
+          <article class="stat-card teal">
+            <div class="stat-header">
+              <span>Total Devices</span>
+              <span class="chip">+12.4%</span>
+            </div>
+            <h2>1,284</h2>
+          </article>
+
+          <article class="stat-card blue">
+            <div class="stat-header">
+              <span>Uptime</span>
+              <span class="chip">+0.8%</span>
+            </div>
+            <h2>99.2%</h2>
+          </article>
+
+          <article class="stat-card amber">
+            <div class="stat-header">
+              <span>Open Alerts</span>
+              <span class="chip">-8.1%</span>
+            </div>
+            <h2>24</h2>
+          </article>
+
+          <article class="stat-card purple">
+            <div class="stat-header">
+              <span>Energy Use</span>
+              <span class="chip">+3.7%</span>
+            </div>
+            <h2>68%</h2>
+          </article>
+        </section>
+
+        <section class="content-grid">
+          <div class="panel panel-large">
+            <div class="panel-header">
+              <h3>System Load</h3>
+              <span>Last 24 hours</span>
+            </div>
+
+            <div class="progress-stack">
+              <div class="progress-group">
+                <div class="progress-label-row"><span>CPU Load</span><strong>76%</strong></div>
+                <div class="progress-track"><span style="width: 76%; background: #2dd4bf;"></span></div>
+              </div>
+
+              <div class="progress-group">
+                <div class="progress-label-row"><span>Memory</span><strong>68%</strong></div>
+                <div class="progress-track"><span style="width: 68%; background: #60a5fa;"></span></div>
+              </div>
+
+              <div class="progress-group">
+                <div class="progress-label-row"><span>Bandwidth</span><strong>82%</strong></div>
+                <div class="progress-track"><span style="width: 82%; background: #a78bfa;"></span></div>
+              </div>
+
+              <div class="progress-group">
+                <div class="progress-label-row"><span>Storage</span><strong>54%</strong></div>
+                <div class="progress-track"><span style="width: 54%; background: #fbbf24;"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Network Flow</h3>
+              <span>Live</span>
+            </div>
+
+            <div class="flow-list">
+              <div class="flow-item">
+                <div class="flow-label-row"><span>Northbound</span><strong>81%</strong></div>
+                <div class="mini-track"><span style="width: 81%; background: #2dd4bf;"></span></div>
+              </div>
+
+              <div class="flow-item">
+                <div class="flow-label-row"><span>Southbound</span><strong>63%</strong></div>
+                <div class="mini-track"><span style="width: 63%; background: #60a5fa;"></span></div>
+              </div>
+
+              <div class="flow-item">
+                <div class="flow-label-row"><span>Edge Sync</span><strong>91%</strong></div>
+                <div class="mini-track"><span style="width: 91%; background: #a78bfa;"></span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="bottom-grid">
+          <div class="panel wide-panel">
+            <div class="panel-header">
+              <h3>Connected Devices</h3>
+              <button class="ghost-btn" type="button">Export</button>
+            </div>
+
+            <table class="device-table">
+              <thead>
+                <tr>
+                  <th>Device</th>
+                  <th>Status</th>
+                  <th>Zone</th>
+                  <th>Uptime</th>
+                  <th>CPU</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Gateway A12</td>
+                  <td><span class="status-badge online">Online</span></td>
+                  <td>North Wing</td>
+                  <td>99.8%</td>
+                  <td>46%</td>
+                </tr>
+                <tr>
+                  <td>Sensor Node 07</td>
+                  <td><span class="status-badge warning">Warning</span></td>
+                  <td>Production</td>
+                  <td>96.4%</td>
+                  <td>72%</td>
+                </tr>
+                <tr>
+                  <td>Power Unit 3</td>
+                  <td><span class="status-badge online">Online</span></td>
+                  <td>Basement</td>
+                  <td>98.7%</td>
+                  <td>58%</td>
+                </tr>
+                <tr>
+                  <td>IoT Hub 9</td>
+                  <td><span class="status-badge offline">Offline</span></td>
+                  <td>Remote</td>
+                  <td>89.1%</td>
+                  <td>0%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="panel">
+            <div class="panel-header">
+              <h3>Alerts</h3>
+              <span>Today</span>
+            </div>
+
+            <div class="alert-list">
+              <div class="alert-item">
+                <div class="alert-dot high"></div>
+                <div class="alert-content">
+                  <strong>Thermal threshold exceeded</strong>
+                  <small>2 min ago</small>
+                </div>
+                <span class="alert-tag high">High</span>
+              </div>
+
+              <div class="alert-item">
+                <div class="alert-dot medium"></div>
+                <div class="alert-content">
+                  <strong>Backup sync delayed</strong>
+                  <small>12 min ago</small>
+                </div>
+                <span class="alert-tag medium">Medium</span>
+              </div>
+
+              <div class="alert-item">
+                <div class="alert-dot critical"></div>
+                <div class="alert-content">
+                  <strong>Battery at 18%</strong>
+                  <small>24 min ago</small>
+                </div>
+                <span class="alert-tag critical">Critical</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
   </body>
 </html>
