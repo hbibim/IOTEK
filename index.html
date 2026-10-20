@@ -3,68 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>IOTEK | Enterprise Security Dashboard</title>
-    <meta name="description" content="IOTEK advanced network security dashboard" />
+    <title>IOTEK | Security Operations Center</title>
+    <meta
+      name="description"
+      content="IOTEK enterprise security dashboard with advanced network, policy, and threat monitoring"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <div class="ambient ambient-1"></div>
+    <div class="ambient ambient-2"></div>
+
     <div class="app-shell">
       <aside class="sidebar">
-        <div class="brand-row">
+        <div class="brand-block">
           <div class="brand-mark">I</div>
           <div>
-            <p class="eyebrow">Security Platform</p>
+            <p class="eyebrow">Operations Suite</p>
             <h1>IOTEK</h1>
           </div>
         </div>
 
         <nav class="nav-menu" aria-label="Main navigation">
-          <button class="nav-item active">
-            <span class="nav-icon">◉</span>
-            <span>Overview</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">◎</span>
-            <span>Network</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">▣</span>
-            <span>Devices</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">▤</span>
-            <span>Security</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">▥</span>
-            <span>Policies</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">◫</span>
-            <span>Reports</span>
-          </button>
-          <button class="nav-item">
-            <span class="nav-icon">⚙</span>
-            <span>Settings</span>
-          </button>
+          <button class="nav-item active"><span class="nav-icon">◉</span><span>Overview</span></button>
+          <button class="nav-item"><span class="nav-icon">◎</span><span>Network</span></button>
+          <button class="nav-item"><span class="nav-icon">◈</span><span>Devices</span></button>
+          <button class="nav-item"><span class="nav-icon">▣</span><span>Security</span></button>
+          <button class="nav-item"><span class="nav-icon">▤</span><span>Policies</span></button>
+          <button class="nav-item"><span class="nav-icon">▥</span><span>Reports</span></button>
+          <button class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></button>
         </nav>
 
         <div class="system-card">
-          <div class="status-head">
-            <span class="dot green"></span>
+          <div class="system-header">
+            <span class="status-dot success"></span>
             <span>System Health</span>
           </div>
-          <div class="system-stats">
-            <div>
+
+          <div class="uptime-ring">
+            <div class="ring-center">
               <strong>99.98%</strong>
-              <small>Uptime</small>
+              <span>Uptime</span>
             </div>
+          </div>
+
+          <div class="mini-metrics">
             <div>
               <strong>11</strong>
-              <small>Alerts</small>
+              <span>Alerts</span>
+            </div>
+            <div>
+              <strong>4</strong>
+              <span>Incidents</span>
             </div>
           </div>
         </div>
@@ -72,23 +68,23 @@
 
       <main class="content">
         <header class="topbar">
-          <div class="page-title-group">
-            <p class="eyebrow muted">Operations Center</p>
+          <div class="page-title">
+            <p class="eyebrow muted">Security operations center</p>
             <h2>Network Overview</h2>
           </div>
 
           <div class="topbar-tools">
-            <label class="searchbox" aria-label="Search">
+            <label class="searchbox">
               <span>⌕</span>
               <input type="text" placeholder="Search devices, policies, logs" />
             </label>
 
-            <div class="topbar-pills">
-              <span class="pill ok">Threats blocked 18</span>
-              <span class="pill warn">Latency +3.5%</span>
+            <div class="toolbar-badges">
+              <span class="pill success">Threats blocked 18</span>
+              <span class="pill warning">Latency +3.5%</span>
             </div>
 
-            <div class="user-pill">
+            <div class="profile-pill">
               <div class="avatar">HB</div>
               <div>
                 <strong>Hbibim</strong>
@@ -99,17 +95,18 @@
         </header>
 
         <section class="hero-panel">
-          <div class="hero-text">
-            <p class="eyebrow">Global security posture</p>
-            <h3>Stable and protected</h3>
+          <div>
+            <p class="eyebrow">Global posture</p>
+            <h3>Protected and stable</h3>
             <div class="hero-meta">
               <span class="status-badge success">Operational</span>
-              <span>Updated <time id="updated-time">just now</time></span>
+              <span>Last sync <time id="updated-time">just now</time></span>
             </div>
           </div>
+
           <div class="hero-actions">
-            <button class="primary-btn">Deploy Policy</button>
-            <button class="ghost-btn">Run Diagnostics</button>
+            <button class="primary-btn">Deploy policy</button>
+            <button class="ghost-btn">Run diagnostics</button>
           </div>
         </section>
 
@@ -171,19 +168,19 @@
                 <h3>Network throughput</h3>
               </div>
               <div class="chart-legend">
-                <span><i class="legend-dot blue"></i> Inbound</span>
-                <span><i class="legend-dot cyan"></i> Outbound</span>
+                <span><i class="legend-dot blue"></i>Inbound</span>
+                <span><i class="legend-dot cyan"></i>Outbound</span>
               </div>
             </div>
 
             <svg viewBox="0 0 760 260" class="line-chart" role="img" aria-label="Traffic chart">
               <defs>
                 <linearGradient id="fillBlue" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#2f6bff" stop-opacity="0.35"/>
+                  <stop offset="0%" stop-color="#2f6bff" stop-opacity="0.38"/>
                   <stop offset="100%" stop-color="#2f6bff" stop-opacity="0"/>
                 </linearGradient>
                 <linearGradient id="fillCyan" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="#35d0ff" stop-opacity="0.25"/>
+                  <stop offset="0%" stop-color="#35d0ff" stop-opacity="0.26"/>
                   <stop offset="100%" stop-color="#35d0ff" stop-opacity="0"/>
                 </linearGradient>
               </defs>
@@ -213,28 +210,25 @@
             </svg>
           </article>
 
-          <article class="panel">
+          <article class="panel topology-panel">
             <div class="panel-header">
               <div>
-                <p class="eyebrow muted">Threat mix</p>
-                <h3>Security posture</h3>
+                <p class="eyebrow muted">Topology</p>
+                <h3>Core mesh</h3>
               </div>
             </div>
 
-            <div class="donut-wrap">
-              <div class="donut-chart">
-                <div class="donut-inner">
-                  <strong>74%</strong>
-                  <span>Clean</span>
-                </div>
-              </div>
+            <div class="topology-canvas">
+              <div class="node central">Core</div>
+              <div class="node node-a">EDGE-1</div>
+              <div class="node node-b">BRANCH</div>
+              <div class="node node-c">SOC</div>
+              <div class="node node-d">WAN</div>
+              <span class="link link-a"></span>
+              <span class="link link-b"></span>
+              <span class="link link-c"></span>
+              <span class="link link-d"></span>
             </div>
-
-            <ul class="risk-list">
-              <li><span class="dot green"></span> Malware blocked <strong>92%</strong></li>
-              <li><span class="dot yellow"></span> Risk events <strong>14</strong></li>
-              <li><span class="dot red"></span> Critical alerts <strong>03</strong></li>
-            </ul>
           </article>
         </section>
 
@@ -287,6 +281,13 @@
                   <td><span class="status-badge danger">Scan</span></td>
                   <td>23 ms</td>
                 </tr>
+                <tr>
+                  <td>Cloud Proxy</td>
+                  <td>10.0.60.9</td>
+                  <td>Cloud</td>
+                  <td><span class="status-badge success">Online</span></td>
+                  <td>11 ms</td>
+                </tr>
               </tbody>
             </table>
           </article>
@@ -329,6 +330,12 @@
                 </div>
               </li>
             </ul>
+
+            <div class="mini-legend">
+              <div><span class="dot green"></span> Clean</div>
+              <div><span class="dot yellow"></span> Watch</div>
+              <div><span class="dot red"></span> Risk</div>
+            </div>
           </article>
         </section>
       </main>

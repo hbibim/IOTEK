@@ -3,12 +3,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (timeEl) {
     const now = new Date();
-    const formatted = now.toLocaleTimeString([], {
+    timeEl.textContent = now.toLocaleTimeString([], {
       hour: '2-digit',
       minute: '2-digit'
     });
-
-    timeEl.textContent = formatted;
   }
 
   const navItems = document.querySelectorAll('.nav-item');
